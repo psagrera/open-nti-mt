@@ -1,120 +1,6 @@
 version: '3.3'
 
 services:
-
-#jti_udp_telegraf:
-#  build: ./inputs/telegraf/image
-#  container_name: jti_udpNative_telegraf
-#  environment:
-#   - "TELEGRAF_AGENT_INTERVAL_SECONDS=30"
-#   - "TELEGRAF_AGENT_FLUSH_INTERVAL=30s"
-#   - "TELEGRAF_AGENT_FLUSH_JITTER=0s"
-#   - "TELEGRAF_AGENT_DEBUG=false"
-#   - "TELEGRAF_AGENT_HOSTNAME=open-nti"
-#   - "TELEGRAF_AGENT_METRIC_BATCH_SIZE=1000"
-#   - "TELEGRAF_AGENT_METRIC_BUFFER_LIMIT=100000"
-#   - "TELEGRAF_AGENT_COLLECTION_JITTER=1s"
-#   - "INFLUXDB_DB_ENABLED=true"
-#   - "INFLUXDB_ADDRESS=influxdb"
-#   - "INFLUXDB_PORT=8086"
-#   - "INFLUXDB_DB_NAME=juniper"
-#   - "INFLUXDB_DB_TIMEOUT=5s"
-#   - "INFLUXDB_DB_USER=juniper"
-#   - "INFLUXDB_DB_PASSWD=juniper"
-#   - "TAGS=true"
-#  ports:
-#    - "50000:50000/udp"
-#  volumes:
-#    - ./inputs/telegraf/jti_udpNative/data:/source/data
-#    - ./inputs/telegraf/jti_udpNative/templates:/source/templates
-#  links:
-#    - influxdb
-
-#jti_openconfig_telegraf:
-#  build: ./inputs/telegraf/image
-#  container_name: jti_openConfig_telegraf
-#  environment:
-#   - "TELEGRAF_AGENT_INTERVAL_SECONDS=30"
-#   - "TELEGRAF_AGENT_FLUSH_INTERVAL=30s"
-#   - "TELEGRAF_AGENT_FLUSH_JITTER=0s"
-#   - "TELEGRAF_AGENT_DEBUG=false"
-#   - "TELEGRAF_AGENT_HOSTNAME=open-nti"
-#   - "TELEGRAF_AGENT_METRIC_BATCH_SIZE=1000"
-#   - "TELEGRAF_AGENT_METRIC_BUFFER_LIMIT=100000"
-#   - "TELEGRAF_AGENT_COLLECTION_JITTER=1s"
-#   - "INFLUXDB_DB_ENABLED=true"
-#   - "INFLUXDB_ADDRESS=influxdb"
-#   - "INFLUXDB_PORT=8086"
-#   - "INFLUXDB_DB_NAME=juniper"
-#   - "INFLUXDB_DB_TIMEOUT=5s"
-#   - "INFLUXDB_DB_USER=juniper"
-#   - "INFLUXDB_DB_PASSWD=juniper"
-#   - "TAGS=true"
-#  ports:
-#    - "50051:50051/tcp"
-#  volumes:
-#    - ./inputs/telegraf/jti_openConfig/data:/source/data
-#    - ./inputs/telegraf/jti_openConfig/templates:/source/templates
-#  links:
-#    - influxdb
-
-#input-netflow-telegraf:
-#  build: ./inputs/telegraf/image
-#  container_name: input-netflow-telegraf
-#  environment:
-#   - "TELEGRAF_AGENT_INTERVAL_SECONDS=30"
-#   - "TELEGRAF_AGENT_FLUSH_INTERVAL=30s"
-#   - "TELEGRAF_AGENT_FLUSH_JITTER=0s"
-#   - "TELEGRAF_AGENT_DEBUG=false"
-#   - "TELEGRAF_AGENT_HOSTNAME=open-nti"
-#   - "TELEGRAF_AGENT_METRIC_BATCH_SIZE=1000"
-#   - "TELEGRAF_AGENT_METRIC_BUFFER_LIMIT=100000"
-#   - "TELEGRAF_AGENT_COLLECTION_JITTER=1s"
-#   - "INFLUXDB_DB_ENABLED=true"
-#   - "INFLUXDB_ADDRESS=influxdb"
-#   - "INFLUXDB_PORT=8086"
-#   - "INFLUXDB_DB_NAME=juniper"
-#   - "INFLUXDB_DB_TIMEOUT=5s"
-#   - "INFLUXDB_DB_USER=juniper"
-#   - "INFLUXDB_DB_PASSWD=juniper"
-#   - "TAGS=true"
-#  ports:
-#    - "2055:2055/udp"
-#  volumes:
-#    - ./inputs/telegraf/input-netflow/data:/source/data
-#    - ./inputs/telegraf/input-netflow/templates:/source/templates
-#  links:
-#    - influxdb
-#
-#input-snmp:
-#  build: ./inputs/telegraf/image
-#  container_name: input-snmp
-#  environment:
-#   - "TELEGRAF_AGENT_INTERVAL_SECONDS=30"
-#   - "TELEGRAF_AGENT_FLUSH_INTERVAL=30s"
-#   - "TELEGRAF_AGENT_FLUSH_JITTER=0s"
-#   - "TELEGRAF_AGENT_DEBUG=true"
-#   - "TELEGRAF_AGENT_HOSTNAME=open-nti"
-#   - "TELEGRAF_AGENT_METRIC_BATCH_SIZE=1000"
-#   - "TELEGRAF_AGENT_METRIC_BUFFER_LIMIT=100000"
-#   - "TELEGRAF_AGENT_COLLECTION_JITTER=1s"
-#   - "INFLUXDB_DB_ENABLED=true"
-#   - "INFLUXDB_ADDRESS=influxdb"
-#   - "INFLUXDB_PORT=8086"
-#   - "INFLUXDB_DB_NAME=snmp"
-#   - "INFLUXDB_DB_TIMEOUT=5s"
-#   - "INFLUXDB_DB_USER=juniper"
-#   - "INFLUXDB_DB_PASSWD=juniper"
-#   - "TAGS=true"
-#  ports:
-#   - "162:162/udp"
-#  volumes:
-#   #- /etc/localtime:/etc/localtime:ro
-#   - ./inputs/telegraf/input-snmp/templates:/source/templates
-#   - ./inputs/telegraf/input-snmp/data:/source/data
-#   - ./inputs/telegraf/input-snmp/logs:/source/logs
-#  links:
-#   - influxdb
   
   input-netconf:
     build: ./inputs/telegraf/image
@@ -179,16 +65,16 @@ services:
 #   - ./inputs/telegraf/input-internal/logs:/source/logs
 #  links:
 #   - influxdb
-
-  influxdb:
-    image: influxdb:1.6.4
-    container_name: influxdb
-    ports:
-      - "8086:8086"
-      - "8090:8090"
-    volumes:
-      - influxdb_data_telegraf:/var/lib/influxdb
-      - ./outputs/influxdb/image/config/influxdb.sh:/docker-entrypoint-initdb.d/influxdb.sh
+#
+#  influxdb:
+#    image: influxdb:1.6.4
+#    container_name: influxdb
+#    ports:
+#      - "8086:8086"
+#      - "8090:8090"
+#    volumes:
+#      - influxdb_data_telegraf:/var/lib/influxdb
+#      - ./outputs/influxdb/image/config/influxdb.sh:/docker-entrypoint-initdb.d/influxdb.sh
 
   chronograf:
     image: quay.io/influxdb/chronograf:1.5.0.1
