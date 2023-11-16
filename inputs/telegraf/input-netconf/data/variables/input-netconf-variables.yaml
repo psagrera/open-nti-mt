@@ -20,7 +20,7 @@ db_schema: 1
 #db_admin_password: root
 #db_user: juniper
 #db_user_password: juniper
-logging_level: 10
+logging_level: 20
 
 #CRITICAL   50
 #ERROR      40
