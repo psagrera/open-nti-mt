@@ -1,1 +1,1 @@
-inputs/telegraf/input-netconf/data/logs/*.log
+*.log
