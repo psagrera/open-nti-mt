@@ -1,5 +1,0 @@
-envs:
-  - output_stdout: false 
-    output_kafka: false
-    ouput_elastic: true 
-    port: 2055

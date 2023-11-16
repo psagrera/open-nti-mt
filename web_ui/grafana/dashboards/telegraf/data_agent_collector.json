@@ -28,17 +28,259 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 8,
-  "iteration": 1544529048901,
+  "iteration": 1700084080369,
   "links": [],
   "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 123,
+      "panels": [],
+      "title": "TASK MEMORY",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influxdb_telegraf",
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 1
+      },
+      "id": 121,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 1,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "select mean(value) from /($host_regex).task.memory.current-percent/ where $timeFilter group by time($interval)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "task memory (percent)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influxdb_telegraf",
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 1
+      },
+      "id": 125,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 1,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "select mean(value) from /($host_regex).task.memory.current-size/ where $timeFilter group by time($interval)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "task memory (size)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "deckbytes",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
     {
       "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 10
       },
       "id": 102,
       "panels": [
@@ -56,7 +298,7 @@
             "h": 7,
             "w": 12,
             "x": 0,
-            "y": 1
+            "y": 11
           },
           "id": 1,
           "legend": {
@@ -176,7 +418,7 @@
             "h": 7,
             "w": 12,
             "x": 12,
-            "y": 1
+            "y": 11
           },
           "id": 3,
           "legend": {
@@ -295,7 +537,7 @@
             "h": 7,
             "w": 12,
             "x": 0,
-            "y": 8
+            "y": 18
           },
           "id": 30,
           "legend": {
@@ -414,7 +656,7 @@
             "h": 7,
             "w": 12,
             "x": 12,
-            "y": 8
+            "y": 18
           },
           "id": 31,
           "legend": {
@@ -529,7 +771,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 1
+        "y": 11
       },
       "id": 103,
       "panels": [
@@ -1173,7 +1415,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 2
+        "y": 12
       },
       "id": 104,
       "panels": [
@@ -2132,7 +2374,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 3
+        "y": 13
       },
       "id": 105,
       "panels": [
@@ -2848,7 +3090,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 4
+        "y": 14
       },
       "id": 106,
       "panels": [
@@ -4242,7 +4484,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 5
+        "y": 15
       },
       "id": 107,
       "panels": [
@@ -4574,7 +4816,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 16
       },
       "id": 108,
       "panels": [
@@ -4796,7 +5038,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 17
       },
       "id": 109,
       "panels": [
@@ -5658,7 +5900,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 18
       },
       "id": 110,
       "panels": [
@@ -5987,7 +6229,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 19
       },
       "id": 111,
       "panels": [
@@ -6736,7 +6978,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 10
+        "y": 20
       },
       "id": 112,
       "panels": [
@@ -7386,7 +7628,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 11
+        "y": 21
       },
       "id": 113,
       "panels": [
@@ -8135,7 +8377,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 12
+        "y": 22
       },
       "id": 114,
       "panels": [
@@ -8989,7 +9231,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 13
+        "y": 23
       },
       "id": 115,
       "panels": [
@@ -9321,7 +9563,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 24
       },
       "id": 116,
       "panels": [
@@ -9971,7 +10213,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 25
       },
       "id": 117,
       "panels": [
@@ -10120,7 +10362,6 @@
         "allFormat": "glob",
         "allValue": "",
         "current": {
-          "tags": [],
           "text": "All",
           "value": [
             "$__all"

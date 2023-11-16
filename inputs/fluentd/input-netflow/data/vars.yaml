@@ -1,5 +1,0 @@
-envs:
-  - output_influxdb: true
-    output_stdout: false 
-    output_kafka: false 
-    port: 2055
