@@ -13,7 +13,7 @@ This version has support for the command **show pfe statistics exceptions**
 https://github.com/psagrera/open-nti-mt.git
 ```
 
-2) Adjust the settings in routers.yaml and credentials.yaml as needed for the exceptions section
+2) Adjust the settings in routers.yaml and credentials.yaml as needed for the **exceptions** section
 
 ```
 cd inputs/telegraf/image/
@@ -29,7 +29,7 @@ cd inputs/telegraf/image/
   password: lab123
 
 ```
-3) Adjust the settings in hosts.yaml, credentials.yaml and commands.yaml as needed for the traditional section
+3) Adjust the settings in hosts.yaml, credentials.yaml and commands.yaml as needed for the **traditional** section
 
 ```
 cd inputs/telegraf/input-netconf/data/
