@@ -31,6 +31,7 @@ cd inputs/telegraf/image/
 ```
 3) Adjust the settings in hosts.yaml, credentials.yaml and commands.yaml as needed for the **traditional** section
 
+   _Note: A parser must exist for each command to be collected. To create a new parser for a command, please refer the section how to create a a new parser_ **How to create a new parser**
 ```
 cd inputs/telegraf/input-netconf/data/
 
@@ -116,6 +117,9 @@ name
 192.168.252.64.chassis.routing-engine.0.memory-buffer-utilization
 192.168.252.64.chassis.routing-engine.0.up-time-msec
 ```
+## How to Create a new parser
+
+To be done
 
 ## How to visualize data
 
