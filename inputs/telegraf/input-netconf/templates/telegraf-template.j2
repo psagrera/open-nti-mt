@@ -29,4 +29,7 @@
 
   # name_suffix = "_mycollector"
 
-
+[[inputs.exec]]
+  commands = ["/usr/bin/python3 /source/pfe_exceptions.py"]
+  timeout = "{{ environ('TELEGRAF_AGENT_INTERVAL_SECONDS') }}s"
+  data_format = "influx"

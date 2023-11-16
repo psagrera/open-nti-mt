@@ -15,13 +15,19 @@ RUN pip3 install pytest --break-system-packages
 RUN pip3 install mock --break-system-packages
 RUN pip3 install yamlreader --break-system-packages
 RUN pip3 install junos-eznc==2.2.0 --break-system-packages
-
+RUN pip3 install pandas --break-system-packages 
 
 
 
 COPY start.sh /source/start.sh
 
 COPY factcache.py /usr/local/lib/python3.11/dist-packages/jnpr/junos/factcache.py
+
+COPY pfe_exceptions.py /source/pfe_exceptions.py
+
+COPY routers.yaml /source/routers.yaml
+
+COPY credentials.yaml /source/credentials.yaml
 
 RUN chmod +x /source/start.sh
 
