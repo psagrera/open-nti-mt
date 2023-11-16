@@ -31,41 +31,6 @@ services:
     links:
      - influxdb
   
-#input-internal:
-#  build: ./inputs/telegraf/image
-#  container_name: input-internal
-#  environment:
-#   - "TELEGRAF_AGENT_INTERVAL_SECONDS=10"
-#   - "TELEGRAF_AGENT_FLUSH_INTERVAL=30s"
-#   - "TELEGRAF_AGENT_FLUSH_JITTER=0s"
-#   - "TELEGRAF_AGENT_DEBUG=true"
-#   - "TELEGRAF_AGENT_HOSTNAME=open-nti"
-#   - "TELEGRAF_AGENT_METRIC_BATCH_SIZE=1000"
-#   - "TELEGRAF_AGENT_METRIC_BUFFER_LIMIT=100000"
-#   - "TELEGRAF_AGENT_COLLECTION_JITTER=1s"
-#   - "INFLUXDB_DB_ENABLED=true"
-#   - "INFLUXDB_ADDRESS=influxdb"
-#   - "INFLUXDB_PORT=8086"
-#   - "INFLUXDB_DB_NAME=docker_internal"
-#   - "INFLUXDB_DB_TIMEOUT=5s"
-#   - "INFLUXDB_DB_USER=juniper"
-#   - "INFLUXDB_DB_PASSWD=juniper"
-#   - "TAGS=true"
-#   - "HOST_PROC=/rootfs/proc"
-#   - "HOST_SYS=/rootfs/sys"
-#   - "HOST_ETC=/rootfs/etc"
-#  volumes:
-#   #- /etc/localtime:/etc/localtime:ro
-#   - /var/run/docker.sock:/var/run/docker.sock:ro
-#   - /sys:/rootfs/sys:ro
-#   - /proc:/rootfs/proc:ro
-#   - /etc:/rootfs/etc:ro
-#   - ./inputs/telegraf/input-internal/templates:/source/templates
-#   - ./inputs/telegraf/input-internal/data:/source/data
-#   - ./inputs/telegraf/input-internal/logs:/source/logs
-#  links:
-#   - influxdb
-#
   influxdb:
     image: influxdb:1.6.4
     container_name: influxdb
