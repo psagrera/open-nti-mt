@@ -28,6 +28,8 @@ services:
      - ./inputs/telegraf/input-netconf/templates:/source/templates
      - ./inputs/telegraf/input-netconf/data:/source/data
      - ./inputs/telegraf/input-netconf/logs:/source/logs
+     - ./inputs/telegraf/image/credentials.yaml:/source/credentials.yaml
+     - ./inputs/telegraf/image/routers.yaml:/source/routers.yaml
     links:
      - influxdb
   
