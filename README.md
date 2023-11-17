@@ -119,7 +119,7 @@ name
 192.168.252.64.chassis.routing-engine.0.memory-buffer-utilization
 192.168.252.64.chassis.routing-engine.0.up-time-msec
 ```
-## How to Create a new parser
+## How to create a new parser
 
 To be done
 
