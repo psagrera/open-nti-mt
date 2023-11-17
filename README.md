@@ -15,6 +15,8 @@ https://github.com/psagrera/open-nti-mt.git
 
 2) Adjust the settings in routers.yaml and credentials.yaml as needed for the **exceptions** section
 
+_Note: This directory will be revamped shortly_
+
 ```
 cd inputs/telegraf/image/
 
@@ -118,6 +120,10 @@ name
 192.168.252.64.chassis.routing-engine.0.up-time-msec
 ```
 ## How to Create a new parser
+
+To be done
+
+## How to add / change a new command or credentials
 
 To be done
 
